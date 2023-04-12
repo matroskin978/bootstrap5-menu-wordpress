@@ -1,0 +1,50 @@
+body {
+    min-width: 320px;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px;
+}
+
+.navbar a {
+    transition: all .3s;
+}
+
+.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
+.animate {
+    animation-duration: .3s;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+}
+
+.slideIn {
+    animation-name: slideIn;
+}
+
+@media all and (min-width: 992px) {
+    .navbar-nav .nav-item .dropdown-menu {
+        display: none;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    }
+
+    .navbar-nav .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+}
