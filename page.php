@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+    <main id="primary" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
@@ -28,10 +28,24 @@ get_header();
 				comments_template();
 			endif;
 
+			$test_data = CFS()->get( 'test_data' );
+			if ( ! empty( $test_data ) ):
+
+				foreach ( $test_data as $item ):
+					?>
+                    <div class="mb-2" style="border-top: 1px solid #ccc">
+                        <p><?= $item['test_data_genre'] ?></p>
+                        <p><?= $item['test_data_year'] ?></p>
+                    </div>
+
+				<?php endforeach;
+
+			endif;
+
 		endwhile; // End of the loop.
 		?>
 
-	</main><!-- #main -->
+    </main><!-- #main -->
 
 <?php
 get_sidebar();
